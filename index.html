@@ -6,111 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Pagina web basica</title>
+    <title>Simple Site Starter</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.navbar a');
 
+            links.forEach(link => {
+                link.addEventListener('click', event => {
+                    event.preventDefault();
+                    const targetId = event.target.getAttribute('href').slice(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - document.querySelector('.head').offsetHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 
     <div class="head">
-
         <div class="logo">
-            <a href="#">Logo</a>
+            <a href="#">BrandLogo</a>
         </div>
 
         <nav class="navbar">
-            <a href="#">Inicio</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Conacto</a>
-            <a href="#">Productos</a>
-            <a href="#">Precio</a>
+            <a href="#header">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+            <a href="#products">Products</a>
+            <a href="#pricing">Pricing</a>
         </nav>
-
     </div>
 
-    <header class="content header">
-        <h2 class="title">Inicio</h2>
+    <header class="content header" id="header">
+        <h2 class="title">Welcome to Simple Site Starter</h2>
         <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-             Ipsam necessitatibus odio quisquam reprehenderit quas, 
-             obcaecati, harum hic molestiae sequi ipsa nihil id tempore explicabo 
-            libero vero quia asperiores similique dicta.
+            Discover a clean and elegant design for your website. This template is perfect for showcasing your brand, products, and services. Start building your online presence today with ease and style.
         </p>
 
         <div class="btn-home">
-            <a href="#" class="btn">Saber mas</a>
-            <a href="#" class="btn">Saber mas</a>
+            <a href="#products" class="btn">Explore Products</a>
+            <a href="#pricing" class="btn">View Pricing</a>
         </div>
     </header>
 
-    <section class="content sau">
-
-        <h2 class="title">Productos</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
-            elit. Veritatis excepturi dolore, harum asperiores 
-            cupiditate officiis quia odit reiciendis quidem iure 
-            architecto laudantium 
-            nihil saepe pariatur vel labore molestias consectetur veniam?</p>
+    <section class="content sau" id="products">
+        <h2 class="title">Our Products</h2>
+        <p>We offer a range of innovative solutions to meet your needs. Explore our top-quality products that combine functionality with modern design.</p>
         
         <div class="box-container">
-
             <div class="box">
                 <i class="fab fa-angular"></i>
-                <h3>Lorem</h3>
-                <p>labore molestias consectetur veniam</p>
+                <h3>Angular Widgets</h3>
+                <p>Enhance your applications with our Angular-based tools.</p>
             </div>
             <div class="box">
                 <i class="fab fa-apple"></i>
-                <h3>Lorem</h3>
-                <p>labore molestias consectetur veniam</p>
+                <h3>Apple Gadgets</h3>
+                <p>Discover the latest gadgets designed for seamless performance.</p>
             </div>
             <div class="box">
                 <i class="fab fa-android"></i>
-                <h3>Lorem</h3>
-                <p>labore molestias consectetur veniam</p>
+                <h3>Android Apps</h3>
+                <p>Optimize your Android experience with our intuitive applications.</p>
             </div>
-
         </div>
-
     </section>
 
-    <section class="content about">
-
-        <h2 class="title">Nosotros</h2>
-        <p>Lorem ipsum dolor sit amet consectetur 
-            adipisicing elit. Ut soluta similique 
-            quia reprehenderit eligendi aliquam. Sit 
-            odio impedit quibusdam. Velit corporis, 
-            optio debitis quidem ex ipsam rerum dolorem autem sequi.
+    <section class="content about" id="about">
+        <h2 class="title">About Us</h2>
+        <p>
+            At Simple Site Starter, we are dedicated to providing you with a solid foundation to build your online projects. Our templates are designed to be user-friendly, customizable, and aesthetically pleasing. Let us help you bring your ideas to life.
         </p>
-
-        <a href="#" class="btn">Saber mas</a>
-
+        <a href="#" class="btn">Learn More</a>
     </section>
 
-    <section class="content price">
-
+    <section class="content price" id="pricing">
         <article class="contain">
-            <h2 class="title">Precio</h2>
-            <p>Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Ut soluta similique 
-                quia reprehenderit eligendi aliquam. Sit 
-                odio impedit quibusdam. Velit corporis, 
-                optio debitis quidem ex ipsam rerum dolorem autem sequi.
+            <h2 class="title">Pricing</h2>
+            <p>
+                Choose a pricing plan that fits your needs. We offer flexible options for individuals, startups, and businesses. Start your journey with Simple Site Starter today.
             </p>
-
-            <a href="#" class="btn">Saber precio</a>
-
+            <a href="#" class="btn">See Pricing</a>
         </article>
-
     </section>
 
-    <section class="content contact">
-        <h2 class="title">Contacto</h2>
-        <p>48481548</p>
+    <section class="content contact" id="contact">
+        <h2 class="title">Contact Us</h2>
+        <p>Have questions or need support? Get in touch with us at:</p>
+        <p><strong>Email:</strong> support@simplesitestarter.com</p>
+        <p><strong>Phone:</strong> +1 (800) 123-4567</p>
         <figure class="map">
-            <img src="img/mapa.png" height="220px" width="100%" alt="mapa">
+            <img src="img/mapa.png" height="220px" width="100%" alt="Location Map">
         </figure>
     </section>
-    
+
 </body>
 </html>
